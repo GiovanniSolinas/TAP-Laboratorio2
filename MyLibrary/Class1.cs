@@ -1,12 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using MyAttribute;
 
 namespace MyLibrary
 {
-    public class Class1
+    public class Foo
     {
+        [ExecuteMe]
+        public void M1()
+        {
+            Console.WriteLine("M1");
+        }
+        [ExecuteMe(45)]
+        [ExecuteMe(0)]
+        [ExecuteMe(3)]
+        public void M2(int a)
+        {
+            Console.WriteLine("M2 a = {0}", a);
+        }
+        [ExecuteMe("hello", "reflection")]
+        public void M3(String s1, String s2)
+        {
+            Console.WriteLine("M3 s1 = {0} s2 = {1}", s1, s2);
+        }
     }
 }

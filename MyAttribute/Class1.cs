@@ -7,18 +7,11 @@ using System.Threading.Tasks;
 
 namespace MyAttribute
 {
-    [AttributeUsage(AttributeTargets.Method,AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class ExecuteMe : Attribute
     {
-        private readonly string name;
-        public ExecuteMe(string name)
+        public ExecuteMe(params object[] input)
         {
-            this.name = name;
-        }
-
-        public string GetName()
-        {
-            return this.name;
         }
     }
 }
