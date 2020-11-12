@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 namespace MyAttribute
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public class ExecuteMe : Attribute
+    public class ExecuteMeAttribute : Attribute
     {
-        public ExecuteMe(params object[] input)
+        public object[] Arguments { get; }
+
+        public ExecuteMeAttribute(params object[] arguments)
         {
+            Arguments = arguments;
         }
     }
 }
